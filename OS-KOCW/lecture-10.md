@@ -14,7 +14,7 @@
     * 중요한 큐는 RR, 백그라운드 잡은 FCFS
 
 * Queue에 대한 스케줄링이 필요함
-    * Fixed prioriry scheduling: 각 큐의 프로세스가 조정된 우선순위를 받음
+    * Fixed priority scheduling: 각 큐의 프로세스가 조정된 우선순위를 받음
     * Time Slice: 각 큐가 CPU 시간을 일정 비율만큼 할당받음
 
 ## Multilevel Feedback Queue
@@ -37,7 +37,7 @@
 ### 스케줄링 아키텍처
 
 1. Symmetric Multiprocessing(SMP): 각 프로세서가 알아서 스케줄링
-2. Asymmetirc Multiprocessing: 하나의 프로세서가 시스템 데이터 접근, 공유 등의 스케줄링을 책임지고 나머지는 거기에 따름
+2. Asymmetric Multiprocessing: 하나의 프로세서가 시스템 데이터 접근, 공유 등의 스케줄링을 책임지고 나머지는 거기에 따름
 
 ## Real-Time Scheduling
 

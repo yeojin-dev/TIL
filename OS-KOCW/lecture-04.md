@@ -70,7 +70,7 @@
 1. long-term scheduler(job scheduler)
     * 시작 프로세스 중 어떤 것들을 ready queue로 보낼지 결정
     * 프로세스에 자원을 주는 문제 담당
-    * degree of muliprogramming 제어
+    * degree of multiprogramming 제어
     * time sharing system에는 보통 장기 스케줄러가 없음(무조건 ready queue로 이동)
 
 2. short-term scheduler(CPU scheduler)
@@ -81,5 +81,5 @@
 3. medium-term scheduler(swapper)
     * 여유 공간 마련을 위해 프로세스를 통째로 메모리에서 디스크로 쫓아냄
     * 프로세스에게서 메모리를 빼앗는 문제(suspended 상태로 만듦)
-    * degree of muliprogramming 제어
+    * degree of multiprogramming 제어
     * long-term scheduler 대신 역할을 함
