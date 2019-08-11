@@ -72,7 +72,7 @@ do {
     turn = j
     while (flag[j] && turn == j)
     critical section
-    flag[j] = false;
+    flag[i] = false;
     remainder section
 } while (1)
 ```
