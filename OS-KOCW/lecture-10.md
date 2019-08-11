@@ -62,3 +62,33 @@
 ### Simulation
 
 * 알고리즘을 모의 프로그램으로 작성한 후 trace를 입력으로 하여 결과 비교
+
+# Process Synchronization 1
+
+## Race Condition
+
+![Race Condition](https://www.objc.io/images/issue-2/race-condition@2x-8b11b31d.png)
+
+* 메모리를 공유하는 프로세스가 여럿 있을 경우 발생할 수 있음
+
+* 사용자 프로세스가 아닌 커널 프로세스의 경우 큰 문제가 발생할 수 있음
+
+## OS에서 Race Condition은 언제 발생하는가?
+
+* 커널 수행 중 인터럽트 발생 시
+* 프로세스가 시스템 콜을 하여 커널 모드로 수행 중인데 컨텍스트 스위칭이 일어날 경우
+* 멀티프로세서 환경에서 공유 메모리를 사용할 경우
+
+## Process Synchronization 문제
+
+* 공유 데이터의 동시 접근은 데이터의 불일치 문제를 발생시킬 수 있다.
+* 일관성 유지를 위해서는 협력 프로세스 간의 실행 순서를 정해주는 매커니즘이 필요
+* Race Condition: 여러 프로세스들이 동시에 공유 데이터를 접근하는 상황, 데이터의 최종 연산 결과는 마지막에 그 데이터를 다룬 프로세스에 따라 달라짐
+* **Race Condition**을 막기 위해서는 concurrent process는 동기화되어야만 함
+
+## Critical Section Problem
+
+* 공유 데이터를 접근하는 코드를 Critical Section이라고 부름
+* n개의 프로세스가 공유 데이터를 동시에 사용하기를 원하는 경우
+* 각 프로세스의 코드에는 공유 데이터 접근하는 코드인 Critical Section 존재
+    * 하나의 프로세스가 Critical Section에 있을 때 다른 모든 프로세는 Critical Section에 들어갈 수 없어야 함
