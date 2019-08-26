@@ -172,7 +172,7 @@ do {
     3. 자발적 협력(voluntary cooperation)이 필요함
     4. 실수가 시스템에 치명적 영향
 
-* 동시 수행 중인 프로세스 사이에서 추상 데이터타입의 안전항 공유를 보장하기 위한 high-level synchronization construct
+* 동시 수행 중인 프로세스 사이에서 추상 데이터타입의 안전한 공유를 보장하기 위한 high-level synchronization construct
 
 ### 모니터의 특징
 
