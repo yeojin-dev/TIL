@@ -52,3 +52,36 @@
 
 * 외부 단편화 발생하지 않음
 * Direct Access 가능
+
+## 유닉스 파일시스템의 구조
+
+![유닉스 파일시스템](https://kouzie.github.io/assets/OS/OS_12_8.png)
+
+* 유닉스 파일시스템은 기본적으로 Indexed Allocation 방법을 사용하고 있음
+    * Direct Index
+    * Single Indirect
+    * Double Indirect
+    * Triple Indirect
+
+### Boot Block
+
+* 부팅에 필요한 정보(bootstrap loader)
+
+### Super Block
+
+* 파일 시스템에 관한 총체적인 정보를 담고 있음
+
+### Inode
+
+* 파일 이름을 제외한 파일의 모든 메타데이터를 저장하고 있음
+* 파일 이름은 디렉토리 파일이 가지고 있음
+
+### Data Block
+
+* 파일의 실제 내용을 보관
+
+## FAT File System
+
+* FAT이라고 하는 테이블에 해당 블럭의 다음 블럭이 어떤 블럭인지 정보를 저장하는 구조(Linked Allocation)
+* 디렉토리 파일에는 파일 이름과 시작 블럭의 정보가 있음
+* FAT은 매우 중요한 정보이기 때문에 백업본을 디스크의 다른 영역에 저장하고 있음
