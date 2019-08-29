@@ -109,3 +109,65 @@
 
 * First Free Block 정보와 Contiguous Free Blocks 정보를 관리
 * 프로그램들이 종종 여러 개의 연속적인 블록을 할당하고 반납한다는 점에 착안함
+
+## Directory Implementation
+
+### Linear List
+
+* <파일 이름, 파일 메타데이터>의 리스트
+* 구현이 간단함
+* 디렉토리 내에 파일이 있는지 찾기 위해서는 linear search 필요함(비효율적)
+
+### Hash Table
+
+* Linear List + Hashing
+* 해시 테이블은 파일 이름을 이 파일의 선형 리스트의 위치로 바꿈
+* O(1)의 검색 시간 복잡도를 가질 수 있음
+* 해시 충돌이 발생할 수 있음
+
+### 파일 메타데이터 보관 위치
+
+* 디렉토리 내에 직접 보관함
+* 디렉토리에는 포인터를 두고 다른 곳에 보관
+    * Inode, FAT 등
+
+### Long File Name의 지원
+
+* <파일 이름, 파일 메타데이터>의 리스트에서 각 엔트리는 일반적으로 고정 크기임
+* 파일 이름이 고정 크기의 엔트리 길이보다 길어지는 경우 엔트리의 마지막 부분에 이름의 뒷부분이 위치한 곳의 포인터를 두는 방법
+* 이름의 나머지 부분은 동일한 디렉토리 파일의 일부에 존재함
+
+## VFS and NFS
+
+### Virtual File System
+
+* 서로 다른 다양한 파일 시스템에 대해 동일한 시스템 콜 인터페이스(API)를 통해 접근할 수 있게 해주는 OS layer
+
+### Network File System
+
+* 분산 시스템에서는 네트워클르 통해 파일이 공유될 수 있음
+* NFS는 분산 환경에서의 대표적 파일 공유 방법임
+
+## Page Cache and Buffer Cache
+
+### Page Cache
+
+* 가상 메모리의 페이징 시스템에서 사용하는 페이지 프레임을 캐싱 관점에서 설명하는 용어
+* Memory-Mapped I/O를 쓰는 경우 파일 I/O에서도 페이지 캐시 사용
+
+### Memory-Mapped I/O
+
+* 파일의 일부를 가상 메모리에 매핑시킴
+* 매핑시킨 영역에 대한 메모리 접근 연산은 파일 입출력을 수행하게 함
+
+### Buffer Cache
+
+* 파일시스템을 통한 I/O 연산은 메모리의 특정 영역인 버퍼 캐시 사용
+* 파일 사용의 지역성 사용
+    * 한 번 읽어온 블록에 대한 후속 요청 시 버퍼 캐시에서 즉시 전달
+* 모든 프로세스가 공용으로 사용
+* Replacement Algorithm 필요함(LRU, LFU 등)
+
+### Unified Buffer Cache
+
+* 최근 OS에서는 기존의 Buffer Cache가 Page Cache에 통함됨
