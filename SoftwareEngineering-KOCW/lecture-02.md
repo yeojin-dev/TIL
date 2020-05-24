@@ -211,3 +211,54 @@
 * 적용
     * 재정적 또는 기술적으로 위험 부담이 큰 경우
     * 요구 사항이나 아키텍처 이해에 어려운 경우
+
+## V(Verification) 모형
+
+![V 모델](https://upload.wikimedia.org/wikipedia/commons/9/96/V-model.JPG)
+
+* 폭포수 모형의 변형
+    * 감추어진 반복과 재작업을 드러냄
+    * 작업과 결과의 검증에 초점
+
+* 장점
+    * 오류를 줄일 수 있음
+
+* 단점
+    * 반복이 없어 변경을 다루기가 쉽지 않음
+
+* 적용
+    * 신뢰성이 높이 요구되는 분야
+
+## 일정 중심 설계 모형
+
+![일정 중심 설계 모형](https://lh3.googleusercontent.com/proxy/a7K1K_9L0ShGs8-V8j_tMmVyIvyRHZHiw0cDXxAMfWaThhvv4NgycQ-YYbBidwjyL0jV3f-UnktIn5IJVDqR5QhcZoyD9Wv0sD1hg0zUAeaYp5u8L8uPFIAwQDdfsXImAKK_CmxRm8RGlwnnLaf71-EtrLRTA8Z90PgifY0hCWFdHRwxSMF7n51svBcbYgqiufXJHy-0xm2zG9l2qPfzOJM)
+
+* 특징
+    * 사용자의 요구에 대하여 우선순위를 정하고 이를 기초로 각 사이클을 계획
+    * 초기 단계에 중요한 기능들을 설계, 구현하여 시스템의 골격을 만듦
+    * 상대적으로 덜 중요한 기능을 나중에 함으로 일정 조정 가능
+
+* 단점
+    * 우선순위가 낮아 출시에 포함되지 않을 기능을 분석하고 설계하는 데 시간을 낭비
+
+* 적용
+    * 소프트웨어 제품의 출시 날짜가 매우 중요한 경우
+    * 목표 일정을 달성할 수 있을지 불확실할 때
+
+## 진화적 출시 모형
+
+* 진화적 출시(evolutionary delivery)
+    * 고객의 요구를 여러 사이클에 걸쳐 개발하여 보여주면서 제품을 개선해 나가는 모형
+
+* 프로토타이핑 모형과 다른 점
+    * 고객의 요구를 프로토타이핑 모형처럼 전적으로 수용하지는 않음
+    * 고객의 반응으로 바뀔 가능성이 적은 부분이 시스템의 핵심
+    * 프로토타이핑 모형은 시스템에서 눈에 띄는 부분을 먼저 강조하고 나중에 시스템 기반에 있는 구멍을 메워나가는 방식
+
+## 모델이 많은 이유
+
+![각 모델 비교](https://slidesplayer.org/slide/16651245/96/images/52/%EB%AA%A8%EB%8D%B8+%EB%B9%84%EA%B5%90%EC%99%80+%EC%84%A0%ED%83%9D+%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4.jpg)
+
+* 모델의 선택은 프로젝트의 상황과 요구에 좌우됨
+* 모델을 잘 선택하면 생산성이 높아짐
+* 경우에 따라서는 최적의 효과를 내기 위하여 모델의 융합이 이루어지기도 함
